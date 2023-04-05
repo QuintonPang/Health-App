@@ -9,7 +9,7 @@
     <TextView
         android:layout_centerHorizontal="true"
         android:id="@+id/title"
-    android:text="Log In"
+        android:text="Log In"
         android:textSize="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:layout_height="158dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-     android:src="@drawable/logo" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/edt_email"
@@ -52,7 +52,7 @@
         android:hint="Log In"
         android:paddingLeft="13dp"
         android:textColorHint="@color/placeHolderText"
-
+        android:textColor="@color/black"
         />
 
     <EditText
@@ -66,7 +66,8 @@
         android:background="@drawable/edt_background"
         android:hint="Password"
         android:paddingLeft="13dp"
-        android:textColorHint="@color/placeHolderText" />
+        android:textColorHint="@color/placeHolderText"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/btn_login"

@@ -42,7 +42,9 @@
         android:layout_marginHorizontal="9dp"
         android:background="@drawable/edt_background"
         android:paddingLeft="13dp"
+        android:textColorHint="@color/placeHolderText"
         />
+
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
@@ -53,6 +55,7 @@
         android:layout_marginHorizontal="9dp"
         android:background="@drawable/edt_background"
         android:paddingLeft="13dp"
+        android:textColorHint="@color/placeHolderText"
         />
 
     <EditText
@@ -64,7 +67,8 @@
         android:layout_marginTop="41dp"
         android:background="@drawable/edt_background"
         android:hint="Password"
-        android:paddingLeft="13dp" />
+        android:paddingLeft="13dp"
+        android:textColorHint="@color/placeHolderText"/>
 
 
     <Button
