@@ -172,15 +172,15 @@ class Profile : AppCompatActivity() {
         }
     }
 
-    fun loadImageFromWebOperations(url: String?): Drawable? {
-        try {
-            val `is`: InputStream = URL(url).getContent() as InputStream
-             return Drawable.createFromStream(`is`, "src name")
-        } catch (e: Exception) {
-            Log.d("IMAGEERROR",e.toString())
-            return null
-        }
-    }
+//    fun loadImageFromWebOperations(url: String?): Drawable? {
+//        try {
+//            val `is`: InputStream = URL(url).getContent() as InputStream
+//             return Drawable.createFromStream(`is`, "src name")
+//        } catch (e: Exception) {
+//            Log.d("IMAGEERROR",e.toString())
+//            return null
+//        }
+//    }
     private class DownloadImageTask(var bmImage: ImageView) :
         AsyncTask<String?, Void?, Bitmap?>() {
         override fun doInBackground(vararg p0: String?): Bitmap? {

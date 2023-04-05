@@ -1,6 +1,5 @@
 package com.quintonpyx.healthapp
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.quintonpyx.healthapp.User
 
 class SignUp : AppCompatActivity() {
 
@@ -57,15 +55,16 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun signUp(name:String, email:String, password:String){
+        val newEmail = email.trim()
         // referenced from google firebase android password authentication documentation
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(newEmail, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 //                    // Sign in success, update UI with the signed-in user's information
 //                    Log.d(TAG, "createUserWithEmail:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
-                    addUserToDatabase(name,email, mAuth.currentUser?.uid!!)
+                    addUserToDatabase(name,newEmail, mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp,Login::class.java)
                     Toast.makeText(this@SignUp, "Signed up successfully, please log in.", Toast.LENGTH_LONG).show()
                     finish()
@@ -91,6 +90,6 @@ class SignUp : AppCompatActivity() {
     private fun addUserToDatabase(name:String, email:String, uid:String){
         mDbRef = FirebaseDatabase.getInstance().getReference()
 
-        mDbRef.child("user").child(uid).setValue(User(name,email,uid,0))
+        mDbRef.child("user").child(uid).setValue(User(name,email,uid,null))
     }
 }
